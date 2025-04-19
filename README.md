@@ -23,14 +23,17 @@ LassoNet extends the L1 regularization principle by combining:
 - A **feedforward nonlinear network**,
 - A **hierarchical constraint** enforcing that nonlinear usage of a feature is allowed only if the linear path uses it.
 
-**Loss Function**:  
-$$
-\min_\theta \mathcal{L}(\theta) + \lambda \|\beta\|_1 \quad \text{subject to } \|W_j\|_\infty \leq M |\beta_j|
-$$  
+**Loss Function:**
+
+Minimize:  
+L(θ) + λ‖β‖₁  
+subject to: ‖Wⱼ‖∞ ≤ M × |βⱼ|
+
 Where:
-- \( \lambda \) is the L1 penalty,
-- \( M \) is the hierarchy coefficient,
-- \( \beta_j \) controls feature activity in the linear path.
+- λ is the L1 penalty (sparsity control)
+- M is the hierarchy coefficient
+- βⱼ controls feature activity in the linear path
+
 
 ### Architecture
 - 1 hidden layer feedforward NN with ReLU
